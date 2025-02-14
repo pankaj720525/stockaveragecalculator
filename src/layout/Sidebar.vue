@@ -11,7 +11,9 @@
 
           <ul class="p-4 space-y-2">
               <li>
-                <router-link to="/" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                active-class="bg-gray-700 text-white"
+                >
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <rect x="14" y="3" width="7" height="7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
@@ -22,7 +24,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/stock-average-calculator" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/stock-average-calculator" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <rect x="7" y="7" width="10" height="4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
@@ -33,7 +38,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/emi-calculator" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/emi-calculator" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <rect x="7" y="7" width="10" height="4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
@@ -44,7 +52,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/upcoming-events" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/upcoming-events" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <path d="M8 2v4M16 2v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -55,7 +66,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/about-us" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/about-us" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <path d="M8 2v4M16 2v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -66,7 +80,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/feedback" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white">
+                <router-link to="/feedback" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
                         <path d="M8 2v4M16 2v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -81,9 +98,15 @@
 </template>
 
 <script> 
+import { ref } from "vue";
 import full_logo from "../assets/mphelper.png";
 import small_logo from "../assets/p-logo.png";
 
+const activeItem = ref(null);
+
+const setActive = (item) => {
+  activeItem.value = item;
+};
 
 export default {
     data() {

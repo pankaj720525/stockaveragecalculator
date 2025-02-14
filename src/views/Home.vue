@@ -8,26 +8,32 @@
             </p>
 
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">📊 Stock Average Calculator</h2>
-                    <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
-                    Quickly determine your stock average price when buying shares at different price points.
-                    </p>
-                </div>
+                <router-link to="/stock-average-calculator">
+                    <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">📊 Stock Average Calculator</h2>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+                        Quickly determine your stock average price when buying shares at different price points.
+                        </p>
+                    </div>
+                </router-link>
 
-                <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">📅 Upcoming Events</h2>
-                    <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
-                    Never miss an important event again. Keep track of your schedules effortlessly.
-                    </p>
-                </div>
+                <router-link to="/upcoming-events">
+                    <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">📅 Upcoming Events</h2>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+                        Never miss an important event again. Keep track of your schedules effortlessly.
+                        </p>
+                    </div>
+                </router-link>
 
-                <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">💰 EMI Calculator</h2>
-                    <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
-                    Calculate your monthly loan payments with ease and plan your finances better.
-                    </p>
-                </div>
+                <router-link to="/emi-calculator">
+                    <div class="dark:bg-gray-800 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-md dark:text-teal-400 font-semibold text-gray-700">💰 EMI Calculator</h2>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+                        Calculate your monthly loan payments with ease and plan your finances better.
+                        </p>
+                    </div>
+                </router-link>
             </div>
         </div>
     </div>
