@@ -8,12 +8,12 @@
                     <div class="mt-3">
                         <label class="block text-gray-800 dark:text-gray-300">Quantity</label>
                         <input v-model.number="quantity1" type="number" placeholder="Enter Quantity"
-                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded focus:ring focus:ring-blue-100 dark:text-white" />
+                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
                     </div>
                     <div class="mt-3">
                         <label class="block text-gray-800 dark:text-gray-300">Buying Price Per Share</label>
                         <input v-model.number="price1" type="number" placeholder="Enter Price"
-                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded focus:ring focus:ring-blue-100 dark:text-white" />
+                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
                     </div>
                     <div v-if="showResults" class="mt-3 font-bold"><span
                             class="text-sm font-semibold dark:text-white">Invested amount in the 1st Buying:</span>
@@ -25,16 +25,16 @@
                     <div class="mt-3">
                         <label class="block text-gray-800 dark:text-gray-300">Quantity</label>
                         <input v-model.number="quantity2" type="number" placeholder="Enter Quantity"
-                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded focus:ring focus:ring-blue-100 dark:text-white" />
+                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
                     </div>
                     <div class="mt-3">
                         <label class="block text-gray-800 dark:text-gray-300">Buying Price Per Share</label>
                         <input v-model.number="price2" type="number" placeholder="Enter Price"
-                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded focus:ring focus:ring-blue-100 dark:text-white" />
+                            class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
                     </div>
                     <div v-if="showResults" class="mt-3"> <span class="text-sm font-semibold dark:text-white">Invested
                             amount in the 2nd Buying:</span> <span class="font-bold text-teal-500 break-words">{{
-                            secondInvestment.toLocaleString() }}</span></div>
+                                secondInvestment.toLocaleString() }}</span></div>
                 </div>
             </div>
             <!-- Result -->
@@ -123,8 +123,7 @@
             </p>
         </div> -->
 
-        <div 
-        class="mt-6 p-4 border border-sky-500 bg-sky-100 dark:bg-sky-900 dark:border-sky-400 rounded-md">
+        <div class="mt-6 p-4 border border-sky-500 bg-sky-100 dark:bg-sky-900 dark:border-sky-400 rounded-md">
             <p><strong>Disclaimer</strong>: The Stock Average Calculator is for informational purposes only and
                 should not be considered financial advice.
                 Always consult with a financial advisor or conduct your own research before making investment
@@ -135,6 +134,14 @@
 
 <script>
 export default {
+    name: 'StockAverageCalculator',
+    metaInfo: {
+        title: 'Stock Average Calculator',
+        meta: [
+            { name: 'description', content: 'Calculate the average price of your stock investments with our Stock Average Calculator.' },
+            { name: 'keywords', content: 'stock average calculator, average stock price calculator, stock calculator' }
+        ]
+    },
     data() {
         return {
             quantity1: null,

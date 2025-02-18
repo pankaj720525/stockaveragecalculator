@@ -11,7 +11,7 @@
 
           <ul class="p-4 space-y-2">
               <li>
-                <router-link to="/" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                <router-link to="/home" class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
                 active-class="bg-gray-700 text-white"
                 >
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/stock-average-calculator" 
+                <router-link to="/" 
                     class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
                     active-class="bg-gray-700 text-white"
                     >
@@ -49,6 +49,20 @@
                         <path d="M16 7h2M16 9h2M16 11h2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                     <span class="ml-[10px] text-sm">EMI Calculator</span>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/hra-calculator" 
+                    class="inline-flex relative items-center py-[10px] w-full rounded-md px-[10px] hover:bg-gray-700 hover:text-white cursor-pointer dark:text-white"
+                    active-class="bg-gray-700 text-white"
+                    >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="16" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
+                        <rect x="7" y="7" width="10" height="4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
+                        <path d="M7 14h.01M10 14h.01M13 14h.01M16 14h.01M7 17h.01M10 17h.01M13 17h.01M16 17h.01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16 7h2M16 9h2M16 11h2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <span class="ml-[10px] text-sm">HRA Calculator</span>
                 </router-link>
               </li>
               <li>
