@@ -5,23 +5,29 @@
 				Online</h1>
 			<div class="space-y-4">
 				<div>
-					<label class="block font-semibold dark:text-gray-300">Basic salary received</label>
-					<input type="number" v-model.number="basicSalary" class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
+					<label class="block text-gray-600 dark:text-gray-300 text-sm">Basic salary received</label>
+					<input type="number" v-model.number="basicSalary"
+						class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
 				</div>
 				<div>
-					<label class="block font-semibold dark:text-gray-300">Dearness Allowance (DA) received</label>
-					<input type="number" v-model.number="daReceived" class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
+					<div>
+						<label class="text-gray-600 dark:text-gray-300 text-sm">Dearness Allowance (DA) received</label>
+					</div>
+					<input type="number" v-model.number="daReceived"
+						class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
 				</div>
 				<div>
-					<label class="block font-semibold dark:text-gray-300">HRA received</label>
-					<input type="number" v-model.number="hraReceived" class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
+					<label class="block text-gray-600 dark:text-gray-300 text-sm">HRA received</label>
+					<input type="number" v-model.number="hraReceived"
+						class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
 				</div>
 				<div>
-					<label class="block font-semibold dark:text-gray-300">Total Rent paid</label>
-					<input type="number" v-model.number="totalRent" class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
+					<label class="block text-gray-600 dark:text-gray-300 text-sm">Total Rent paid</label>
+					<input type="number" v-model.number="totalRent"
+						class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
 				</div>
 				<div>
-					<label class="block font-semibold dark:text-gray-300">Do you live in Delhi, Mumbai, Kolkata, or
+					<label class="block text-gray-600 dark:text-gray-300 text-sm">Do you live in Delhi, Mumbai, Kolkata, or
 						Chennai?</label>
 					<div class="flex gap-4">
 						<label class="flex items-center dark:text-white">
@@ -45,13 +51,70 @@
 				<canvas ref="chartCanvas" height="300"></canvas>
 			</div>
 			<div class="mt-6 p-4">
-				<h3 class="text-lg font-bold dark:text-white">Calculation Result</h3>
-				<p class="mt-2 dark:text-white">Actual HRA received: ₹{{ hraReceived.toLocaleString() }}</p>
-				<p class="dark:text-gray-100">50% of basic salary: ₹{{ halfBasicSalary.toLocaleString() }}</p>
-				<p class="dark:text-gray-100">Rent Paid in excess of 10% of salary: ₹{{ rentExcess.toLocaleString() }}
-				</p>
-				<p class="font-bold dark:text-white">Amount of exempted HRA: ₹{{ exemptedHRA.toLocaleString() }}</p>
-				<p class="font-bold dark:text-white">HRA chargeable to Tax: ₹{{ taxableHRA.toLocaleString() }}</p>
+				<div class="p-12 bg-white relative w-full sm:p-6 xs:p-2 rounded-tr-md rounded-br-none rounded-bl-none dark:bg-gray-600 dark:text-slate-200" style="box-shadow:0px 0px 30px 0px #1369EB1A">
+					<div>
+						<div class="  border-b  border-none">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-medium">Actual HRA received</div>
+								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ hraReceived.toLocaleString() }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="  border-b  border-none">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-medium">50% of basic salary</div>
+								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ halfBasicSalary.toLocaleString() }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="  border-b hidden border-none">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-medium">40% of basic salary</div>
+								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ rentExcess.toLocaleString() }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="  border-b  undefined">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-medium">Rent Paid in excess of 10% of salary</div>
+								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ rentExcess.toLocaleString() }}</span>
+								</div>
+							</div>
+							<div class="text-s-14 font-medium text-[#9092A3] dark:text-gray-400 pl-3 pb-4">The least of the above three is
+								exempt from HRA</div>
+						</div>
+					</div>
+					<div>
+						<div class="border-b border-none font-bold">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-bold">Amount of exempted HRA</div>
+								<div class="font-bold whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ exemptedHRA.toLocaleString() }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="border-b  border-none font-bold">
+							<div class="flex justify-between items-center gap-2 p-3">
+								<div class="font-bold">HRA chargeable to Tax</div>
+								<div class="font-bold whitespace-nowrap dark:text-sky-300">
+									<span>₹</span><span class="">{{ taxableHRA.toLocaleString() }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -63,10 +126,10 @@ import Chart from 'chart.js/auto';
 export default {
 	data() {
 		return {
-			basicSalary: 600000,
+			basicSalary: 500000,
 			daReceived: 0,
-			hraReceived: 240000,
-			totalRent: 180001,
+			hraReceived: 220000,
+			totalRent: 140000,
 			metroCity: true,
 			chart: null,
 		};
@@ -90,10 +153,10 @@ export default {
 			this.updateChart();
 		},
 		reset() {
-			this.basicSalary = 0;
+			this.basicSalary = 500000;
 			this.daReceived = 0;
-			this.hraReceived = 0;
-			this.totalRent = 0;
+			this.hraReceived = 220000;
+			this.totalRent = 140000;
 			this.metroCity = true;
 			this.updateChart();
 		},
