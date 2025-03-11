@@ -8,7 +8,7 @@
         <div class="flex items-center justify-between space-x-2">
           <label class="block text-gray-600 dark:text-gray-300 text-sm">Loan Amount (₹)</label>
           <input type="number" v-model="loanAmount"
-            class="w-32 border dark:bg-gray-800 p-2 rounded-md text-center dark:text-white" />
+            class="w-32 border dark:bg-gray-900 p-2 rounded-md text-center dark:text-white" />
         </div>
         <div class="">
           <input type="range" v-model="loanAmount" minlength="0" min="10000" max="8000000" step="50000"
@@ -21,7 +21,7 @@
         <div class="flex items-center justify-between space-x-2">
           <label class="block text-gray-600 dark:text-gray-300 text-sm">Rate of Interest (p.a %)</label>
           <input type="number" v-model="interestRate"
-            class="w-20 border p-2 dark:bg-gray-800 rounded-md text-center dark:text-white" />
+            class="w-20 border p-2 dark:bg-gray-900 rounded-md text-center dark:text-white" />
         </div>
         <div class="">
           <input type="range" v-model="interestRate" min="1" max="20" step="0.1"
@@ -34,7 +34,7 @@
         <div class="flex items-center justify-between space-x-2">
           <label class="block text-gray-600 dark:text-gray-300 text-sm">Loan Tenure (Years)</label>
           <input type="number" v-model="loanTenure"
-            class="w-16 border p-2 dark:bg-gray-800 rounded-md text-center dark:text-white" />
+            class="w-16 border p-2 dark:bg-gray-900 rounded-md text-center dark:text-white" />
         </div>
         <div>
           <input type="range" v-model="loanTenure" min="1" max="30" step="1" class="w-full cursor-pointer custom-slider"
@@ -43,13 +43,50 @@
       </div>
 
       <!-- EMI Results -->
-      <div class="mt-6 p-4 bg-gray-100 dark:bg-gray-900 rounded dark:text-white">
-        <h3 class="text-lg font-bold dark:text-slate-300">Loan Summary</h3>
-        <p class="text-lg font-bold">Monthly EMI: <span class="text-teal-500">₹{{ monthlyEMI.toLocaleString() }}</span>
-        </p>
-        <p>Principal Amount: <span class="font-bold dark:text-slate-300">₹{{ loanAmount.toLocaleString() }}</span></p>
-        <p>Total Interest: <span class="font-bold">₹{{ totalInterest.toLocaleString() }}</span></p>
-        <p>Total Payment: <span class="font-bold">₹{{ totalPayment.toLocaleString() }}</span></p>
+      <div class="bg-white dark:bg-gray-900 rounded-lg px-6 py-3 ring shadow-xl ring-gray-900/5">
+          <h3 class="text-lg font-bold dark:text-slate-300">Loan Summary</h3>
+          <div class="relative w-full rounded-tr-md rounded-br-none rounded-bl-none dark:text-slate-200">
+              <div>
+                  <div class="border-b  border-none">
+                      <div class="flex justify-between items-center gap-2 pt-1">
+                          <div class="font-medium">Monthly EMI:</div>
+                          <div class="font-medium whitespace-nowrap text-teal-500 dark:text-teal-400">
+                              <span>₹</span><span class="">{{ monthlyEMI.toLocaleString() }}</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div class="  border-b  border-none">
+                      <div class="flex justify-between items-center gap-2 pt-1">
+                          <div class="font-medium">Principal Amount:</div>
+                          <div class="font-medium whitespace-nowrap text-teal-500 dark:text-teal-400">
+                              <span>₹</span><span class="">{{ loanAmount.toLocaleString() }}</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div class="  border-b  border-none">
+                      <div class="flex justify-between items-center gap-2 pt-1">
+                          <div class="font-medium">Total Interest:</div>
+                          <div class="font-medium whitespace-nowrap text-teal-500 dark:text-teal-400">
+                              <span>₹</span><span class="">{{ totalInterest.toLocaleString() }}</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div class="  border-b  border-none">
+                      <div class="flex justify-between items-center gap-2 pt-1">
+                          <div class="font-medium">Total Payment:</div>
+                          <div class="font-medium whitespace-nowrap text-teal-500 dark:text-teal-400">
+                              <span>₹</span><span class="">{{ totalPayment.toLocaleString() }}</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
     <!-- Highcharts Pie Chart -->

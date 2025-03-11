@@ -27,8 +27,7 @@
 						class="w-full p-2 border border-gray-400 dark:bg-gray-900 rounded-md focus:ring focus:ring-blue-100 dark:text-white" />
 				</div>
 				<div>
-					<label class="block text-gray-600 dark:text-gray-300 text-sm">Do you live in Delhi, Mumbai, Kolkata, or
-						Chennai?</label>
+					<label class="block text-gray-600 dark:text-gray-300 text-sm">Do you live in Delhi, Mumbai, Kolkata, or Chennai?</label>
 					<div class="flex gap-4">
 						<label class="flex items-center dark:text-white">
 							<input type="radio" v-model="metroCity" :value="true" class="mr-2" /> Yes
@@ -51,33 +50,33 @@
 				<canvas ref="chartCanvas" height="300"></canvas>
 			</div>
 			<div class="mt-6 p-4">
-				<div class="p-12 bg-white relative w-full sm:p-6 xs:p-2 rounded-tr-md rounded-br-none rounded-bl-none dark:bg-gray-600 dark:text-slate-200" style="box-shadow:0px 0px 30px 0px #1369EB1A">
+				<div class="p-12 bg-white relative w-full sm:p-6 xs:p-2 rounded-tr-md rounded-br-none rounded-bl-none dark:bg-gray-900 dark:text-slate-200" style="box-shadow:0px 0px 30px 0px #1369EB1A">
 					<div>
 						<div class="  border-b  border-none">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-medium">Actual HRA received</div>
-								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+								<div class="font-medium whitespace-nowrap dark:text-teal-400">
 									<span>₹</span><span class="">{{ hraReceived.toLocaleString() }}</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div>
-						<div class="  border-b  border-none">
+					<div v-if="metroCity === true">
+						<div class="border-b  border-none">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-medium">50% of basic salary</div>
-								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+								<div class="font-medium whitespace-nowrap dark:text-teal-400">
 									<span>₹</span><span class="">{{ halfBasicSalary.toLocaleString() }}</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div>
-						<div class="  border-b hidden border-none">
+					<div v-if="metroCity === false">
+						<div class="border-b border-none">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-medium">40% of basic salary</div>
-								<div class="font-medium whitespace-nowrap dark:text-sky-300">
-									<span>₹</span><span class="">{{ rentExcess.toLocaleString() }}</span>
+								<div class="font-medium whitespace-nowrap dark:text-teal-400">
+									<span>₹</span><span class="">{{ halfBasicSalary.toLocaleString() }}</span>
 								</div>
 							</div>
 						</div>
@@ -86,7 +85,7 @@
 						<div class="  border-b  undefined">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-medium">Rent Paid in excess of 10% of salary</div>
-								<div class="font-medium whitespace-nowrap dark:text-sky-300">
+								<div class="font-medium whitespace-nowrap dark:text-teal-400">
 									<span>₹</span><span class="">{{ rentExcess.toLocaleString() }}</span>
 								</div>
 							</div>
@@ -98,7 +97,7 @@
 						<div class="border-b border-none font-bold">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-bold">Amount of exempted HRA</div>
-								<div class="font-bold whitespace-nowrap dark:text-sky-300">
+								<div class="font-bold whitespace-nowrap dark:text-teal-400">
 									<span>₹</span><span class="">{{ exemptedHRA.toLocaleString() }}</span>
 								</div>
 							</div>
@@ -108,7 +107,7 @@
 						<div class="border-b  border-none font-bold">
 							<div class="flex justify-between items-center gap-2 p-3">
 								<div class="font-bold">HRA chargeable to Tax</div>
-								<div class="font-bold whitespace-nowrap dark:text-sky-300">
+								<div class="font-bold whitespace-nowrap dark:text-teal-400">
 									<span>₹</span><span class="">{{ taxableHRA.toLocaleString() }}</span>
 								</div>
 							</div>
